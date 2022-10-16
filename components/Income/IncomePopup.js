@@ -53,7 +53,7 @@ export default function IncomePopup() {
 
     }
 
-    console.log(money);
+    // console.log(money);
     return (
         <div className="add_input">
             <form className='form_area' onSubmit={submitPost}>

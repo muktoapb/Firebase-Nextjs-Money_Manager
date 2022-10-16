@@ -2,7 +2,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useRouter } from "next/router";
 import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../utils/firebase';
+import { auth } from "../utils/firebase";
 export default function Login() {
     //signin with google
     const googleProvider = new GoogleAuthProvider();

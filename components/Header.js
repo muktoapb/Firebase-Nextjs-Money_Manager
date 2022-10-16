@@ -11,7 +11,7 @@ export default function Header() {
 
     // },[user])
 
-console.log(user);
+// console.log(user);
   return (
     <div className="header_area">
         <nav>
