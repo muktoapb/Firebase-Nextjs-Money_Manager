@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -31,7 +32,7 @@ export default function Login() {
         <div className="login_area">
             <Image src={Logo} alt="Money Manager"></Image>
             <h3>login</h3>
-            <button onClick={GoogleLogin}>Google</button>
+            <Button variant="contained" onClick={GoogleLogin}>Login with google</Button>
         </div>
     )
 }

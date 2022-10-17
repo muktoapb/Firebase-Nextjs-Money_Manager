@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -24,7 +25,7 @@ export default function Header() {
                 <div className="logedinmenu">
                         <img src={user?.photoURL} alt={user?.displayName} width='60' height="60"/>
                     
-                    <button onClick={()=>auth.signOut()}>Logout</button>
+                    <Button variant='contained' onClick={()=>auth.signOut()}>Logout</Button>
                 </div>
             )
             }
