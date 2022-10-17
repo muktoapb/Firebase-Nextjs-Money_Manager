@@ -1,8 +1,11 @@
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Logo from "../assets/img/logo.svg";
 import { auth } from "../utils/firebase";
+
 export default function Login() {
     //signin with google
     const googleProvider = new GoogleAuthProvider();
@@ -26,6 +29,7 @@ export default function Login() {
 
     return (
         <div className="login_area">
+            <Image src={Logo} alt="Money Manager"></Image>
             <h3>login</h3>
             <button onClick={GoogleLogin}>Google</button>
         </div>

@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Layout>
-      <ToastContainer />
+      <ToastContainer position='top-center' autoClose={1500}/>
       <Component {...pageProps} allIncome={allIncome}/>
     </Layout>
   )

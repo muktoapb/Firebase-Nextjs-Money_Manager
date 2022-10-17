@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../utils/firebase';
 import Header from './Header';
 import Login from './Login';
-import Nav from './Nav';
+import Nav from './SideBar/Nav';
 
 
 

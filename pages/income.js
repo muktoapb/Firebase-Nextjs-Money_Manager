@@ -1,6 +1,6 @@
 import React from 'react'
-import IncomeList from '../components/Income/IncomeList'
-import IncomePopup from '../components/Income/IncomePopup'
+import IncomeList from '../components/Money/IncomeList'
+import IncomePopup from '../components/Money/IncomePopup'
 
 export default function Income({allIncome}) {
   return (

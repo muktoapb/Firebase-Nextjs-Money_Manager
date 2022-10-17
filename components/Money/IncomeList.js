@@ -12,7 +12,7 @@ export default function IncomeList(allIncome) {
         {
                 incomelist.map((data)=>{
                     totalIncome = totalIncome + data.income;
-                    return <MoneyItem date={data.date} amount={data.income} text={data.comment} key={data.id}></MoneyItem>;
+                    return <MoneyItem date={data.date} amount={data.income} text={data.comment} itemid={data.id} key={data.id}></MoneyItem>;
                 })
             }
         </div>
