@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html{
+html{
     font-family: 'Poppins', sans-serif;
-} */
+}
+
+@layer components{
+    .navitem_design{
+        @apply text-blue-700 bg-slate-50 shadow-inner rounded-md rounded-r-none after:w-2 after:h-full after:absolute after:right-[-4px] after:top-0 after:bg-slate-50;
+    }
+    .navitem_defult{
+        @apply flex items-center my-3 relative px-2 py-1;
+    }
+}

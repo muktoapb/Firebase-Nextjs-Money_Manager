@@ -12,7 +12,7 @@ export default function Layout({ children }) {
     <>
       {
         user ?
-          <div className="bg-slate-50 flex">
+          <div className="bg-slate-50 flex font-Poppins">
             <div className="w-80">
             <Sidebar/>
             </div>
