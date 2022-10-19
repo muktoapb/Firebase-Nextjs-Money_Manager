@@ -3,8 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../utils/firebase';
 import Header from './Header';
 import Login from './Login';
-import Nav from './SideBar/Nav';
-
+import Sidebar from './SideBar/Sidebar';
 
 
 export default function Layout({ children }) {
@@ -13,11 +12,11 @@ export default function Layout({ children }) {
     <>
       {
         user ?
-          <div className="layout">
-            <div className="sidebar">
-              <Nav></Nav>
+          <div className="bg-slate-50 flex">
+            <div className="w-80">
+            <Sidebar/>
             </div>
-            <div className="main_content">
+            <div className="w-full">
               <Header />
               {children}
             </div>
