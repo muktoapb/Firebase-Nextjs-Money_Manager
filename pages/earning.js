@@ -5,7 +5,7 @@ import IncomePopup from '../components/Money/IncomePopup'
 
 export default function Income({ allIncome }) {
   return (
-    <div className="py-8 px-8">
+    <div>
       <Breadcam title='Earning'/>
       <div className="popupinput">
         <IncomePopup />

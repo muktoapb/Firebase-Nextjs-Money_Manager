@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Breadcam from '../components/Breadcam';
 
 
 
@@ -11,13 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-
-
-        
-      </main>
-
-
+      <Breadcam title='Dashboard'/>
     </div>
   )
 }

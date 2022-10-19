@@ -18,7 +18,9 @@ export default function Layout({ children }) {
             </div>
             <div className="w-full">
               <Header />
+              <div className="py-8 px-8">
               {children}
+              </div>
             </div>
           </div>
           :
