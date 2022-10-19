@@ -1,4 +1,3 @@
-import { ThemeProvider } from '@mui/material';
 import { collection, onSnapshot, query, where } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -7,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import Layout from '../components/Layout';
 import '../styles/globals.css';
 import { auth, db } from '../utils/firebase';
-import { theme } from '../utils/theme';
 
 
 function MyApp({ Component, pageProps }) {
@@ -32,12 +30,10 @@ function MyApp({ Component, pageProps }) {
 
 
   return (
-    <ThemeProvider theme={theme}>
-        <Layout>
-          <ToastContainer position='top-center' autoClose={1500} />
-          <Component {...pageProps} allIncome={allIncome} />
-        </Layout>
-      </ThemeProvider>
+    <Layout>
+      <ToastContainer position='top-center' autoClose={1500} />
+      <Component {...pageProps} allIncome={allIncome} />
+    </Layout>
   )
 }
 
