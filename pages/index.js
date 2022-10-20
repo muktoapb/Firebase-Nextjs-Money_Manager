@@ -9,7 +9,6 @@ export default function Home() {
       <Head>
         <title>Money Manager</title>
         <meta name="description" content="Money Manager - Track Income, Donate, Investment and Expense" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Breadcam title='Dashboard'/>

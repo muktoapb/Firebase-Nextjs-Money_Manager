@@ -8,7 +8,7 @@ import { auth, db } from '../../utils/firebase';
 
 
 
-export default function IncomePopup() {
+export default function AddEarning() {
     const route = useRouter();
     const [user, loading, error] = useAuthState(auth);
     const [money, setMoney] = useState({ income: '', date: '', comment: '', donate: 0, invest: 0 })

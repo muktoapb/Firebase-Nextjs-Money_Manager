@@ -9,29 +9,26 @@ export default function Nav() {
     <nav className='w-full'>
       <ul className='text-lg text-slate-600 font-medium'>
 
-        <li className={`navitem_defult ${router.pathname=='/' ? 'text-blue-700 bg-slate-50 px-2 py-1 shadow-inner rounded-md rounded-r-none after:w-2 after:h-full after:absolute after:right-[-4px] after:top-0 after:bg-slate-50': 'hover:navitem_design'}`}>
-          <MdOutlineDashboard className='mr-1'/>
-          <Link href='/'> Dashboard </Link>
+        <li className={router.pathname=='/' ? 'navitem_design': 'hover:navitem_design'}>
+          <Link href='/'> 
+           <a className='navitem_defult'><MdOutlineDashboard className='mr-1'/> Dashboard</a>
+          </Link>
         </li>
 
-        <li className={`navitem_defult ${router.pathname=='/earning' ? 'navitem_design': 'hover:navitem_design'}`}>
-          <MdOutlineAccountBalanceWallet className='mr-1'/>
-          <Link href='/earning'>Earning</Link>
+        <li className={router.pathname=='/earning' ? 'navitem_design': 'hover:navitem_design'}>
+          <Link href='/earning'><a className="navitem_defult"><MdOutlineAccountBalanceWallet className='mr-1'/> Earning</a></Link>
         </li>
 
-        <li className={`navitem_defult ${router.pathname=='/donate' ? 'navitem_design': 'hover:navitem_design'}`}>
-          <BiDonateHeart className='mr-1'/>
-          <Link href='/donate'>Donate</Link>
+        <li className={router.pathname=='/donate' ? 'navitem_design': 'hover:navitem_design'}>
+          <Link href='/donate'><a className="navitem_defult"><BiDonateHeart className='mr-1'/> Donate</a></Link>
         </li>
         
-        <li className={`navitem_defult ${router.pathname=='/investment' ? 'navitem_design': 'hover:navitem_design'}`}>
-          <IoBriefcaseOutline className='mr-1'/>
-          <Link href='/investment'>Investment</Link>
+        <li className={router.pathname=='/investment' ? 'navitem_design': 'hover:navitem_design'}>
+          <Link href='/investment'><a className="navitem_defult"><IoBriefcaseOutline className='mr-1'/> Investment</a></Link>
         </li>
         
-        <li className={`navitem_defult ${router.pathname=='/expense' ? 'navitem_design': 'hover:navitem_design'}`}>
-          <MdPayment className='mr-1'/>
-          <Link href='/expense'>Expense</Link>
+        <li className={router.pathname=='/expense' ? 'navitem_design': 'hover:navitem_design'}>
+          <Link href='/expense'><a className="navitem_defult"><MdPayment className='mr-1'/> Expense</a></Link>
         </li>
       </ul>
     </nav>
