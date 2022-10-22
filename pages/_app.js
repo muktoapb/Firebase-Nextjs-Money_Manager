@@ -10,8 +10,9 @@ import { auth, db } from '../utils/firebase';
 
 function MyApp({ Component, pageProps }) {
   const [user, loading, error] = useAuthState(auth);
-  // Get all income from DB
   const [allIncome, setAllIncome] = useState([]);
+
+  // Get all income from DB
   const getIncome = async () => {
     const collectionRef = collection(db, 'money');
     const q = query(collectionRef, where("user", "==", user ? user.uid : 0));
@@ -24,15 +25,18 @@ function MyApp({ Component, pageProps }) {
     });
     return unsubscribe;
   }
+  
+  
   useEffect(() => {
     getIncome()
+    // allEarning()
   }, [user, loading])
 
-
+  
   return (
     <Layout>
       <ToastContainer position='top-center' autoClose={1500} />
-      <Component {...pageProps} allIncome={allIncome} />
+      <Component {...pageProps} allIncome={allIncome} setTotalEarning/>
     </Layout>
   )
 }

@@ -8,33 +8,34 @@ import { auth, db } from '../../utils/firebase';
 
 
 
-export default function AddEarning() {
+export default function AddEarning({setStatus}) {
     const route = useRouter();
     const [user, loading, error] = useAuthState(auth);
-    const [money, setMoney] = useState({ income: '', date: '', comment: '', donate: 0, invest: 0 })
+    const [money, setMoney] = useState({ amount: '', date: '', comment: '', donate: 0, invest: 0, expense:0 })
     const donateCal = (i) => (i * (2.5 / 100));
     const investCal = (i) => (i * (5 / 100));
     // console.log(user?.uid);
 
     useEffect(() => {
-        const incomeValue = money?.income;
-        const donate = donateCal(incomeValue);
-        const invest = investCal(incomeValue);
-        setMoney({ ...money, donate: donate, invest: invest })
-    }, [money.income]);
+        const amountValue = money?.amount;
+        const donate = Math.round(donateCal(amountValue) * 100) / 100;
+        const invest = Math.round(investCal(amountValue) * 100) / 100;
+        const expense = amountValue - (donate+invest);
+        setMoney({ ...money, donate: donate, invest: invest, expense: expense })
+    }, [money.amount]);
 
     const submitPost = async (e) => {
         e.preventDefault();
         //run check
-        if (!money.income || !money.date) {
-            if (!money.income) {
-                toast.error("Put income! 🤑", {
+        if (!money.amount || !money.date) {
+            if (!money.amount) {
+                toast.error("Put Earning!", {
                     position: toast.POSITION.TOP_CENTER,
                     autoClose: 2000
                 })
             }
             if (!money.date) {
-                toast.error("Put Date 📅", {
+                toast.error("Put Date!", {
                     position: toast.POSITION.TOP_CENTER,
                     autoClose: 2000
                 })
@@ -48,7 +49,12 @@ export default function AddEarning() {
             timestamp: serverTimestamp(),
             user: user?.uid,
         });
-        setMoney({ income: '', date: '', comment: '', donate: 0, invest: 0 });
+        setStatus(false);
+        setMoney({ amount: '', date: '', comment: '', donate: 0, invest: 0, expense: 0 });
+        toast.success("Earning Added!", {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose: 2000
+        })
         return;
 
     }
@@ -56,15 +62,16 @@ export default function AddEarning() {
     // console.log(money);
     return (
         <div className="add_input">
-            <form className='form_area' onSubmit={submitPost}>
-                <input type="number" placeholder='income' value={money?.income}
-                    onChange={(e) => setMoney({ ...money, income: Number(e.target.value) })} /> <br />
-                <input type="date" name="date" id="" placeholder='date' value={money?.date}
+            <form className='form_area flex flex-wrap' onSubmit={submitPost}>
+                <input className='w-[49%] field_design mr-2' type="number" placeholder='Earning' value={money?.amount}
+                    onChange={(e) => setMoney({ ...money, amount: Number(e.target.value) })} />
+                <input className='w-[49%] field_design' type="date" name="date" id="" placeholder='date' value={money?.date}
                     onChange={(e) => setMoney({ ...money, date: e.target.value })} /> <br />
-                <textarea name="comment" placeholder='comments' value={money?.comment}
-                    onChange={(e) => setMoney({ ...money, comment: e.target.value })}></textarea><br />
-                <input type="submit" value="Add" />
+                <textarea className='w-full field_design my-2' name="comment" placeholder='Comments' value={money?.comment}
+                    onChange={(e) => setMoney({ ...money, comment: e.target.value })}></textarea>
+                <input className='bg-sky-500 inline-block text-white px-4 py-1 rounded-sm text-sm cursor-pointer hover:bg-sky-600' type="submit" value="Add" />
             </form>
+            <p className='text-xs text-slate-400 mt-2'>Donate: <b>{money?.donate}</b>, Invesment: <b>{money?.invest}</b></p>
         </div>
 
     )
