@@ -12,7 +12,7 @@ export default function Sidebar() {
             <div className="text-center w-full pr-8">
                 <Image className='rounded-full cursor-pointer' height={60} width={60} alt={user?.displayName} src={user?.photoURL} />
                 <p className='text-slate-500 text-sm mt-3'>Welcome back,</p>
-                <p className='font-medium text-lg'>{user?.displayName}</p>
+                <p className='font-semibold text-lg leading-tight mt-1'>{user?.displayName}</p>
             </div>
 
             <Nav></Nav>

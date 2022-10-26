@@ -4,7 +4,7 @@ export default function Popup({ status, setStatus, children, title }) {
     return (
         <>
             {status&& (
-                <div className='w-full fixed md:max-w-lg max-w-sm bg-white px-5 py-5 rounded-md shadow-lg mx-auto left-0 right-0'>
+                <div className='w-full fixed md:max-w-lg max-w-sm bg-white px-5 py-5 rounded-md shadow-lg mx-auto left-0 right-0 z-50'>
                     <h4 className="text-md font-semibold mb-2">{title}</h4>
                     <div className="">
                         {children}

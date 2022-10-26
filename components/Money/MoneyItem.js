@@ -19,10 +19,10 @@ export default function MoneyItem({itemid,date, amount,text,expense, db_name}) {
 
 
   return (
-    <div className="columns-2 md:columns-4  mb-2">
-        <div className="flex items-center"><BiCalendarEvent/> <span className='ml-2'>{date}</span></div>
+    <div className="flex justify-between mb-2 flex-wrap">
+        <div className="flex items-center w-2/6"><BiCalendarEvent/> <span className='ml-2'>{date}</span></div>
         <div className="flex items-center"><BiDollarCircle/> <span className='ml-2'>{amount}</span></div>
-        <div className="flex items-center"><BiComment/> <span className='ml-2'>{text}</span></div>
+        <div className="flex items-start"><BiComment/> <span className='ml-2'>{text}</span></div>
         <button onClick={()=>deleteitem(itemid)} className="text-white w-6 h-6 text-sm bg-red-500 flex justify-center items-center rounded-full"><BiTrash/></button> 
     </div>
   )

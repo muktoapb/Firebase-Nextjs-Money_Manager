@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Breadcam from '../components/Breadcam';
+import Example from '../components/Chart/Chart';
 
 
 
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
 
       <Breadcam title='Dashboard'/>
+      <Example/>
     </div>
   )
 }

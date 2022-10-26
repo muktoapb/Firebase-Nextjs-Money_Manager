@@ -24,10 +24,10 @@ export default function Income({ allIncome }) {
       <Popup status={ePop} setStatus={setEPop} title="Add Earning">
         <AddEarning setStatus={setEPop}/>
       </Popup>
-      <div className="grid xl:grid-cols-2 gap-5">
-        <MoneyList money={allIncome} title='Income Log' db_name='money'/>
+      <div className="grid gap-5">
         <EarningChart money={allIncome}/>
         <MoneyList money={allIncome} title='Income Log' db_name='money'/>
+        {/* <MoneyList money={allIncome} title='Income Log' db_name='money'/> */}
       </div>
       <div onClick={() => setEPop(true)}>
         <AddButton>+</AddButton>
