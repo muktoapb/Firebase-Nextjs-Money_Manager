@@ -6,12 +6,13 @@ import AddEarning from '../components/Money/AddEarning'
 import MoneyList from '../components/Money/MoneyList'
 import Popup from '../components/Money/Popup'
 import AddButton from '../components/utility/AddButton'
+import { dataFormater } from '../utils/dataFormater'
 
-export default function Income({ allIncome,earningdata }) {
+export default function Income({ allIncome }) {
   const [ePop, setEPop] = useState(false);
   // console.log(ePop);
 
-
+  const chartdata = dataFormater(allIncome);
   return (
     <>
       <Head>
@@ -24,8 +25,8 @@ export default function Income({ allIncome,earningdata }) {
         <AddEarning setStatus={setEPop}/>
       </Popup>
       <div className="grid gap-5">
-        <EarningChart earningdata={earningdata}/>
-        <MoneyList money={allIncome} title='Income Log' db_name='money'/>
+        <EarningChart data={chartdata}/>
+        <MoneyList money={allIncome} title='Income Log' db_name='money' earning={true}/>
         {/* <MoneyList money={allIncome} title='Income Log' db_name='money'/> */}
       </div>
       <div onClick={() => setEPop(true)}>

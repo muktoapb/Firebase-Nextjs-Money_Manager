@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-    font-family: 'Poppins', sans-serif;
-}
 
+.hfit{
+    height: calc(100% + 28px);
+    min-height: calc(100% + 28px);
+}
 @layer components{
     
     .navitem_defult{

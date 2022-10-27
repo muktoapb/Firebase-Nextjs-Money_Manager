@@ -7,7 +7,7 @@ import { MdPayment } from 'react-icons/md'
 export default function Breadcam({title}) {
   return (
     <div className="flex justify-between items-center mb-8">
-        <h3 className='text-2xl font-semibold mt-4'>{title}</h3>
+        <h3 className='text-2xl font-bold mt-4'>{title}</h3>
         <div className="flex gap-4 text-3xl">
           <Link href='/earning'>
             <a className="relative">

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { BiDonateHeart } from "react-icons/bi";
 import { IoBriefcaseOutline } from "react-icons/io5";
-import { MdOutlineAccountBalanceWallet, MdOutlineDashboard, MdPayment } from "react-icons/md";
+import { MdInfoOutline, MdOutlineAccountBalanceWallet, MdOutlineDashboard, MdPayment } from "react-icons/md";
 export default function Nav() {
   const router = useRouter();
   return (
@@ -29,6 +29,10 @@ export default function Nav() {
         
         <li className={router.pathname=='/expense' ? 'navitem_design': 'hover:navitem_design'}>
           <Link href='/expense'><a className="navitem_defult"><MdPayment className='mr-1'/> Expense</a></Link>
+        </li>
+
+        <li className={router.pathname=='/about' ? 'navitem_design': 'hover:navitem_design'}>
+          <Link href='/about'><a className="navitem_defult"><MdInfoOutline className='mr-1'/> About</a></Link>
         </li>
       </ul>
     </nav>

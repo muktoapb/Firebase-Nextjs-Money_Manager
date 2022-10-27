@@ -1,13 +1,16 @@
 import Head from 'next/head';
 import React, { useState } from 'react';
 import Breadcam from '../components/Breadcam';
+import EarningChart from '../components/Chart/EarningChart';
 import AddDonate from '../components/Money/AddData';
 import MoneyList from '../components/Money/MoneyList';
 import Popup from '../components/Money/Popup';
 import AddButton from '../components/utility/AddButton';
+import { dataFormater } from '../utils/dataFormater';
 
-const Donate = ({ alldonate, earningdata }) => {
+const Donate = ({ alldonate }) => {
     const [ePop, setEPop] = useState(false);
+    const chartdata = dataFormater(alldonate);
     return (
         <>
 
@@ -21,8 +24,8 @@ const Donate = ({ alldonate, earningdata }) => {
                 <AddDonate setStatus={setEPop} title="Donation" dbName='donate' />
             </Popup>
             <div className="grid gap-5">
-                {/* <EarningChart earningdata={earningdata}/> */}
-                <MoneyList money={alldonate} title='Income Log' db_name='money' />
+                <EarningChart data={chartdata}/>
+                <MoneyList money={alldonate} title='Income Log' db_name='donate' />
             </div>
             <div onClick={() => setEPop(true)}>
                 <AddButton>+</AddButton>
