@@ -7,10 +7,9 @@ import MoneyList from '../components/Money/MoneyList'
 import Popup from '../components/Money/Popup'
 import AddButton from '../components/utility/AddButton'
 
-export default function Income({ allIncome }) {
+export default function Income({ allIncome,earningdata }) {
   const [ePop, setEPop] = useState(false);
   // console.log(ePop);
-
 
 
   return (
@@ -25,7 +24,7 @@ export default function Income({ allIncome }) {
         <AddEarning setStatus={setEPop}/>
       </Popup>
       <div className="grid gap-5">
-        <EarningChart money={allIncome}/>
+        <EarningChart earningdata={earningdata}/>
         <MoneyList money={allIncome} title='Income Log' db_name='money'/>
         {/* <MoneyList money={allIncome} title='Income Log' db_name='money'/> */}
       </div>

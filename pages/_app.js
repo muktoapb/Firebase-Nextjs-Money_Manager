@@ -1,4 +1,5 @@
 import { collection, onSnapshot, query, where } from 'firebase/firestore';
+import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { ToastContainer } from 'react-toastify';
@@ -9,15 +10,20 @@ import { auth, db } from '../utils/firebase';
 
 
 function MyApp({ Component, pageProps }) {
+
+  // All state to store data
   const [user, loading, error] = useAuthState(auth);
   const [allIncome, setAllIncome] = useState([]);
+  const [alldonate, setAlldonate] = useState([]);
+  const [allexpense, setAllexpense] = useState([]);
+  const [allinvestment, setAllinvestment] = useState([]);
 
-  // Get all income from DB
-  const getIncome = async () => {
-    const collectionRef = collection(db, 'money');
+  //Getting Data from DB
+  const addDB = async (db_Name, stateName) => {
+    const collectionRef = collection(db, db_Name);
     const q = query(collectionRef, where("user", "==", user ? user.uid : 0));
     const unsubscribe = onSnapshot(q, (snapshort) => {
-      setAllIncome(
+      stateName(
         snapshort.docs.map((doc) => (
           { ...doc.data(), id: doc.id }
         ))
@@ -25,18 +31,42 @@ function MyApp({ Component, pageProps }) {
     });
     return unsubscribe;
   }
-  
-  
+
   useEffect(() => {
-    getIncome()
-    // allEarning()
+    addDB('money',setAllIncome)
+    addDB('donate',setAlldonate)
+    addDB('expense',setAllexpense)
+    addDB('investment',setAllinvestment)
   }, [user, loading])
 
-  
+
+
+  //earning data start
+  let edata = allIncome.map((m) => {
+    const month = moment(m?.date).format('MMMM YYYY');
+    const amount = m?.amount;
+    const data = { mth: month, amt: amount };
+    return data;
+  })
+
+  const monthearn = edata.reduce((acc, cur) => {
+    acc[cur.mth] = acc[cur.mth] + cur.amt || cur.amt;
+    return acc;
+  }, {});
+
+  const arraymonth = Object.keys(monthearn);
+  const earningdata = arraymonth.map((key) => {
+    const data = { Month: key, Amount: monthearn[key] }
+    return data;
+  })
+
+//earning data end 
+
+
   return (
     <Layout>
       <ToastContainer position='top-center' autoClose={1500} />
-      <Component {...pageProps} allIncome={allIncome} setTotalEarning/>
+      <Component {...pageProps} allIncome={allIncome} alldonate={alldonate} allexpense={allexpense} allinvestment={allinvestment}  earningdata={earningdata} setTotalEarning/>
     </Layout>
   )
 }
