@@ -10,7 +10,6 @@ export const GetData = () => {
     const [alldonate, setAlldonate] = useState([]);
     const [allexpense, setAllexpense] = useState([]);
     const [allinvestment, setAllinvestment] = useState([]);
-    // const [haveMoney, setHaveMoney] = useState({main:[],earning: [], donate: [], expense});
     //Getting Data from DB
     const addDB = async (db_Name, stateName) => {
         const collectionRef = collection(db, db_Name);
