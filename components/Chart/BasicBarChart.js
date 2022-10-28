@@ -20,7 +20,7 @@ export default function BasicBarChart({ data }) {
           <Tooltip formatter={(value) => numberFormater(value)} />
           {/* <Legend /> */}
           <CartesianGrid strokeDasharray="3 3" />
-          <Bar dataKey="Amount" barSize={20} fill="#0EA5E8">
+          <Bar dataKey="Amount" barSize={30} fill="#0EA5E8">
             <LabelList dataKey="Amount" position="top" formatter={(value) => new Intl.NumberFormat('en').format(value)} className="text-[12px]" />
           </Bar>
         </ComposedChart>

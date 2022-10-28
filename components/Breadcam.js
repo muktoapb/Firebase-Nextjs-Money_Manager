@@ -4,6 +4,7 @@ import { BiDonateHeart } from 'react-icons/bi'
 import { IoBriefcaseOutline } from 'react-icons/io5'
 import { MdPayment } from 'react-icons/md'
 import { GetData, SumTotal, TotalGet } from '../utils/getData'
+import { numberFormater } from '../utils/numberFormater'
 
 export default function Breadcam({ title }) {
 
@@ -22,19 +23,19 @@ export default function Breadcam({ title }) {
         <Link href='/expense'>
           <a className="relative">
             <MdPayment className="-mb-5" />
-            <span className='text-xs bg-red-500 text-white px-2 py-1 rounded-md'>{allget.expense - expenseTotal}</span>
+            <span className='text-xs bg-red-500 text-white px-2 py-1 rounded-md'>{numberFormater(allget.expense - expenseTotal)}</span>
           </a>
         </Link>
         <Link href='/donate'>
           <a className="relative">
             <BiDonateHeart className="-mb-5" />
-            <span className='text-xs bg-red-500 text-white px-2 py-1 rounded-md'>{allget.donate - donateTotal}</span>
+            <span className='text-xs bg-red-500 text-white px-2 py-1 rounded-md'>{numberFormater(allget.donate - donateTotal)}</span>
           </a>
         </Link>
         <Link href='/investment'>
           <a className="relative">
             <IoBriefcaseOutline className="-mb-5" />
-            <span className='text-xs bg-red-500 text-white px-2 py-1 rounded-md'>{allget.invest - investmentTotal}</span>
+            <span className='text-xs bg-red-500 text-white px-2 py-1 rounded-md'>{numberFormater(allget.invest - investmentTotal)}</span>
           </a>
         </Link>
 
