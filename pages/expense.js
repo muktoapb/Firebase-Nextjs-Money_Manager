@@ -7,11 +7,10 @@ import MoneyList from '../components/Money/MoneyList';
 import Popup from '../components/Money/Popup';
 import AddButton from '../components/utility/AddButton';
 import { dataFormater } from '../utils/dataFormater';
-import { GetData } from '../utils/getData';
 
-const Expense = () => {
+const Expense = ({allgetting}) => {
     const [ePop, setEPop] = useState(false);
-    const allexpense = GetData().expense;
+    const allexpense = allgetting.expense;
     const chartdata = dataFormater(allexpense);
     return (
         <>

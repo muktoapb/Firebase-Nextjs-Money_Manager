@@ -7,12 +7,11 @@ import MoneyList from '../components/Money/MoneyList'
 import Popup from '../components/Money/Popup'
 import AddButton from '../components/utility/AddButton'
 import { dataFormater } from '../utils/dataFormater'
-import { GetData } from '../utils/getData'
 
-export default function Income() {
+export default function Income({allgetting}) {
   const [ePop, setEPop] = useState(false);
   // console.log(ePop);
-  const allIncome = GetData().main
+  const allIncome = allgetting.main
   const chartdata = dataFormater(allIncome);
   return (
     <>
