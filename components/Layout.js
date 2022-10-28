@@ -15,8 +15,8 @@ export default function Layout({ children }) {
         user ?
           <div className='min-h-screen bg-slate-50 h-full font-SourceSansPro'>
           <Header />
-          <div className="flex font-Poppins min-h-[85vh]">
-            <div className="w-80">
+          <div className="flex font-Poppins min-h-screen">
+            <div className="w-80 py-8 min-h-screen">
             <Sidebar/>
             </div>
             <div className="w-full">

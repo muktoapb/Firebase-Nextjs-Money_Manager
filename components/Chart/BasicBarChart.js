@@ -1,8 +1,8 @@
 import React from 'react';
-import { Bar, CartesianGrid, ComposedChart, LabelList, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { Bar, CartesianGrid, ComposedChart, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { numberFormater } from '../../utils/numberFormater';
 
-export default function EarningChart({ data }) {
+export default function BasicBarChart({ data }) {
 
 
   return (
@@ -18,7 +18,7 @@ export default function EarningChart({ data }) {
           <XAxis dataKey="Month" allowDataOverflow='true' tick={{ fontSize: 13 }} />
           <YAxis tick={{ fontSize: 12 }} />
           <Tooltip formatter={(value) => numberFormater(value)} />
-          <Legend />
+          {/* <Legend /> */}
           <CartesianGrid strokeDasharray="3 3" />
           <Bar dataKey="Amount" barSize={20} fill="#0EA5E8">
             <LabelList dataKey="Amount" position="top" formatter={(value) => new Intl.NumberFormat('en').format(value)} className="text-[12px]" />

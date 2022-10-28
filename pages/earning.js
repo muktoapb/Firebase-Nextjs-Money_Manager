@@ -1,17 +1,18 @@
 import Head from 'next/head'
 import React, { useState } from 'react'
 import Breadcam from '../components/Breadcam'
-import EarningChart from '../components/Chart/EarningChart'
+import BasicBarChart from '../components/Chart/BasicBarChart'
 import AddEarning from '../components/Money/AddEarning'
 import MoneyList from '../components/Money/MoneyList'
 import Popup from '../components/Money/Popup'
 import AddButton from '../components/utility/AddButton'
 import { dataFormater } from '../utils/dataFormater'
+import { GetData } from '../utils/getData'
 
-export default function Income({ allIncome }) {
+export default function Income() {
   const [ePop, setEPop] = useState(false);
   // console.log(ePop);
-
+  const allIncome = GetData().main
   const chartdata = dataFormater(allIncome);
   return (
     <>
@@ -25,7 +26,7 @@ export default function Income({ allIncome }) {
         <AddEarning setStatus={setEPop}/>
       </Popup>
       <div className="grid gap-5">
-        <EarningChart data={chartdata}/>
+        <BasicBarChart data={chartdata}/>
         <MoneyList money={allIncome} title='Income Log' db_name='money' earning={true}/>
         {/* <MoneyList money={allIncome} title='Income Log' db_name='money'/> */}
       </div>
