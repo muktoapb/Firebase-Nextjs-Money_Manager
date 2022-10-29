@@ -26,8 +26,8 @@ const Expense = ({allgetting}) => {
                 <AddDonate setStatus={setEPop} title="Expense" dbName='expense' />
             </Popup>
             <div className="grid gap-5">
-                <Chart data={chartdata} option={option} legend={false} />
-                <MoneyList money={allexpense} title='Income Log' db_name='expense' />
+                <Chart data={chartdata} option={option} legend={false} labeltop={true} />
+                <MoneyList money={allexpense} title='Expense Log' db_name='expense' />
             </div>
             <div onClick={() => setEPop(true)}>
                 <AddButton>+</AddButton>

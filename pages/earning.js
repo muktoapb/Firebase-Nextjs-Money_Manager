@@ -1,3 +1,4 @@
+import moment from 'moment'
 import Head from 'next/head'
 import React, { useState } from 'react'
 import Breadcam from '../components/Breadcam'
@@ -6,13 +7,31 @@ import AddEarning from '../components/Money/AddEarning'
 import MoneyList from '../components/Money/MoneyList'
 import Popup from '../components/Money/Popup'
 import AddButton from '../components/utility/AddButton'
-import { dataFormater } from '../utils/dataFormater'
 
 export default function Income({allgetting}) {
   const [ePop, setEPop] = useState(false);
   // console.log(ePop);
   const allIncome = allgetting.main
-  const chartdata = dataFormater(allIncome);
+  let allexpense = allIncome.map((m) => {
+    const month = moment(m?.date).format('MMMM YYYY');
+    const amount = m.expense;
+    const data = { mth: month, amt: amount };
+    return data;
+  })
+  const monthlyTotal = (data) => {
+    const monthAmt = data.reduce((acc, cur) => {
+      acc[cur.mth] = acc[cur.mth] + cur.amt || cur.amt;
+      return acc;
+    }, {});
+    return monthAmt;
+  }
+  const monthlycome = monthlyTotal(allexpense);
+  const arraymonth = Object.keys(monthlycome);
+  const chartdata = arraymonth.map((key) => {
+    const data = { Month: key, Amount: monthlycome[key] }
+    return data;
+  });
+  // console.log(chartdata);
   const option = [{ name: 'Amount', color: '#37A3E8', type: 'bar' }]
   return (
     <>
@@ -26,8 +45,8 @@ export default function Income({allgetting}) {
         <AddEarning setStatus={setEPop}/>
       </Popup>
       <div className="grid gap-5">
-        <Chart data={chartdata} option={option} legend={false} />
-        <MoneyList money={allIncome} title='Income Log' db_name='money' earning={true}/>
+        <Chart data={chartdata} option={option} legend={false} labeltop={true}/>
+        <MoneyList money={allIncome} title='Earning Log' db_name='money' earning={true}/>
         {/* <MoneyList money={allIncome} title='Income Log' db_name='money'/> */}
       </div>
       <div onClick={() => setEPop(true)}>

@@ -54,7 +54,7 @@ export default function Home({ allgetting }) {
   });
   // console.log(chartdata);
   const option = [{ name: 'Donate', color: '#EA500D', type: 'bar' }, { name: 'Investment', color: '#9980FF', type: 'bar' }]
-  
+
   const earnigchart = [{ name: 'Amount', color: '#37A4E8', type: 'bar' }, { name: 'Earning', color: '#E81A1E', type: 'line' }]
 
   return (
@@ -65,8 +65,10 @@ export default function Home({ allgetting }) {
       </Head>
 
       <Breadcam title='Dashboard' />
-      <div className="mb-4"><Chart data={chartdata} option={earnigchart} legend={true} /></div>
-      <div className="mb-4"><Chart data={chartdata} option={option} legend={true} /></div>
+      <div className="flex gap-4">
+        <div className="mb-4 w-1/2"><Chart data={chartdata} option={earnigchart} legend={true} labeltop={true} /></div>
+        <div className="mb-4 w-1/2"><Chart data={chartdata} option={option} legend={true} /></div>
+      </div>
       <ItemList money={chartdata} title="All Gettings" db_name="money" />
     </div>
   )
