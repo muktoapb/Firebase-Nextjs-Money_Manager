@@ -27,7 +27,7 @@ export default function ItemList({ money, title, db_name }) {
                     }
                 </div>
                 <div className="mt-3 border-t-2 border-dashed pt-2 tracking-wider">
-                    <p className=''><span className='border-r-2 pr-2'>Total Earning : {numberFormater(totalexpense.toFixed(2))}</span> <span className='border-r-2 pr-2 pl-2'>Total Donate : {numberFormater(totaldonate.toFixed(2))}</span> <span className='pl-2'>Total Investment : {numberFormater(totalinvest.toFixed(2))}</span></p>
+                    <p className=''><span className='md:border-r-2 pr-2 block md:inline-block'>Total Earning : {numberFormater(totalexpense.toFixed(2))}</span> <span className='md:border-r-2 md:pr-2 md:pl-2 block md:inline-block'>Total Donate : {numberFormater(totaldonate.toFixed(2))}</span> <span className='md:pl-2 block md:inline-block'>Total Investment : {numberFormater(totalinvest.toFixed(2))}</span></p>
                 </div>
             </div>
         )

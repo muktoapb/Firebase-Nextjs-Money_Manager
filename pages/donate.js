@@ -6,6 +6,7 @@ import AddDonate from '../components/Money/AddData';
 import MoneyList from '../components/Money/MoneyList';
 import Popup from '../components/Money/Popup';
 import AddButton from '../components/utility/AddButton';
+import { Nodata } from '../components/utility/Nodata';
 import { dataFormater } from '../utils/dataFormater';
 
 const Donate = ({allgetting}) => {
@@ -22,6 +23,7 @@ const Donate = ({allgetting}) => {
 
 
             <Breadcam title='Donate' />
+            {chartdata.length==0 && <Nodata/>}
             <Popup status={ePop} setStatus={setEPop} title="Add Donation">
                 <AddDonate setStatus={setEPop} title="Donation" dbName='donate' />
             </Popup>

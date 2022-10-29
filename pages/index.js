@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Breadcam from '../components/Breadcam';
 import Chart from '../components/Chart/Chart';
 import ItemList from '../components/Dashboard/ItemList';
+import { Nodata } from '../components/utility/Nodata';
 
 
 
@@ -65,6 +66,7 @@ export default function Home({ allgetting }) {
       </Head>
 
       <Breadcam title='Dashboard' />
+      {chartdata.length==0 && <Nodata/>}
       <div className="lg:flex lg:gap-4">
         <div className="mb-4 lg:w-1/2"><Chart data={chartdata} option={earnigchart} legend={true} labeltop={true} /></div>
         <div className="mb-4 lg:w-1/2"><Chart data={chartdata} option={option} legend={true} /></div>

@@ -6,7 +6,8 @@ export default function Chart({ data, legend, option,labeltop }) {
 
   // console.log(option);
   return (
-    <div className='border-dashed border-2 py-4 px-4 rounded-lg h-[400px]'>
+    data.length>0 &&
+    <div className='border-dashed border-2 py-2 px-2 pl-0 md:py-4 md:px-4 rounded-lg h-[400px]'>
 
       <ResponsiveContainer width="99%">
         <ComposedChart
@@ -26,7 +27,7 @@ export default function Chart({ data, legend, option,labeltop }) {
             option.map((item, index) => (
               item.type == 'bar' ? <Bar key={index} dataKey={item.name} barSize={30} fill={item.color}>
                 {
-                  labeltop && <LabelList dataKey={item.name} position="top" formatter={(value) => new Intl.NumberFormat('en').format(value)} className="text-[12px]" />
+                  labeltop && <LabelList dataKey={item.name} position="top" formatter={(value) => new Intl.NumberFormat('en').format(value)} className="text-[12px] hidden md:block" />
                 }
 
               </Bar> :

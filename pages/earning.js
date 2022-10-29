@@ -7,6 +7,7 @@ import AddEarning from '../components/Money/AddEarning'
 import MoneyList from '../components/Money/MoneyList'
 import Popup from '../components/Money/Popup'
 import AddButton from '../components/utility/AddButton'
+import { Nodata } from '../components/utility/Nodata'
 
 export default function Income({allgetting}) {
   const [ePop, setEPop] = useState(false);
@@ -41,6 +42,7 @@ export default function Income({allgetting}) {
       
       
       <Breadcam title='Earnings' />
+      {chartdata.length==0 && <Nodata/>}
       <Popup status={ePop} setStatus={setEPop} title="Add Earning">
         <AddEarning setStatus={setEPop}/>
       </Popup>

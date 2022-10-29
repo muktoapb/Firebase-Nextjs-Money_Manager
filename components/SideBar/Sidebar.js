@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { MdLogout } from "react-icons/md";
 import { auth } from '../../utils/firebase';
 import Nav from './Nav';
 
@@ -16,9 +15,6 @@ export default function Sidebar() {
             </div>
 
             <Nav></Nav>
-            <div className="hidden md:block pr-8 w-full mt-4 absolute bottom-10 left-0">
-                <button className='w-full flex justify-center items-center font-semibold' onClick={() => auth.signOut()}><MdLogout/> <span className='ml-2'>Sign Out</span></button>
-            </div>
         </div>
     )
 }

@@ -17,8 +17,8 @@ export default function Breadcam({ title }) {
 
 
   return (
-    <div className="flex justify-between items-center mb-8 relative z-1 mt-24">
-      <h3 className='text-2xl font-bold'>{title}</h3>
+    <div className="md:flex justify-between items-center mb-8 relative z-1 mt-24">
+      <h3 className='text-2xl font-bold mb-4 md:mb-0'>{title}</h3>
       <div className="flex gap-4 text-3xl">
         <Link href='/expense'>
           <a className="relative">
