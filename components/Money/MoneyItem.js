@@ -20,7 +20,7 @@ export default function MoneyItem({itemid,date, amount,text,expense, db_name}) {
 
 
   return (
-    <div className="flex flex-wrap justify-between mb-2 flex-wrap border-b-2 border-dotted last:border-b-0 pb-2">
+    <div className="flex flex-wrap justify-between mb-2 border-b-2 border-dotted last:border-b-0 pb-2">
         <div className="flex items-center w-1/2 md:w-1/4"><BiCalendarEvent/> <span className='ml-2'>{date}</span></div>
         <div className="flex items-center w-1/2 md:w-1/5"><BiDollarCircle/> <span className='ml-2 tracking-wider'>{numberFormater(amount)}</span></div>
         <div className="flex items-center w-1/2"><BiComment/> <span className='ml-2'>{text}</span></div>
