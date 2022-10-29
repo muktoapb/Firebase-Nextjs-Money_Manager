@@ -25,7 +25,7 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className="lg:w-1/2">
+                <div className="xl:w-1/2">
                     <h4 className='text-lg font-semibold my-2'>About This APP</h4>
                     <div className="text-slate-600 tracking-wide">
                         <p>The app is built for a special purpose. Money Management is very important in our life to avoid bad times. As a Muslim, I believe Allah (God) gives us everything. We don&apos;t earn anything from ourselves. Every business partner is important. Business profit or loss also depends on your business partner. In my case, I keep Allah as my business partner. I give him a 2.5% partnership. That means 2.5% of my earnings I give to charity or poor people who badly need money. If you are from another religion you can think of it as just donating. This App is designed for All of the people who want to donate a % of their income.</p>
