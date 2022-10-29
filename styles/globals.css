@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.hfit{
-    height: calc(100% + 28px);
-    min-height: calc(100% + 28px);
-}
 @layer components{
     
     .navitem_defult{
