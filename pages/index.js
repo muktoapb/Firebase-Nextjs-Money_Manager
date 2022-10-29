@@ -65,9 +65,9 @@ export default function Home({ allgetting }) {
       </Head>
 
       <Breadcam title='Dashboard' />
-      <div className="flex gap-4">
-        <div className="mb-4 w-1/2"><Chart data={chartdata} option={earnigchart} legend={true} labeltop={true} /></div>
-        <div className="mb-4 w-1/2"><Chart data={chartdata} option={option} legend={true} /></div>
+      <div className="lg:flex lg:gap-4">
+        <div className="mb-4 lg:w-1/2"><Chart data={chartdata} option={earnigchart} legend={true} labeltop={true} /></div>
+        <div className="mb-4 lg:w-1/2"><Chart data={chartdata} option={option} legend={true} /></div>
       </div>
       <ItemList money={chartdata} title="All Gettings" db_name="money" />
     </div>

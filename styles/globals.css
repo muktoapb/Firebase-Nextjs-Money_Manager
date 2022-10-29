@@ -10,10 +10,10 @@
 @layer components{
     
     .navitem_defult{
-        @apply flex items-center my-3 px-2 py-1;
+        @apply flex items-center my-3 px-2 py-1 w-10 md:w-auto h-4 md:h-auto justify-center ;
     }
     .navitem_design{
-        @apply text-blue-700 bg-slate-50 shadow-inner rounded-md rounded-r-none relative after:w-2 after:h-full after:absolute after:right-[-4px] after:top-0 after:bg-transparent after:bg-slate-50;
+        @apply text-blue-700 bg-slate-50 shadow-inner rounded-full md:rounded-md md:rounded-r-none relative md:after:w-2 md:after:h-full after:absolute after:right-[-4px] after:top-0 after:bg-transparent after:bg-slate-50 scale-125  border-2 border-sky-500;
     }
     .field_design{
         @apply border-solid border-slate-300 border px-1 rounded-sm focus:outline-none focus:border-sky-500 text-sm;

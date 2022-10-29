@@ -13,14 +13,14 @@ export default function Layout({ children }) {
 
       {
         user ?
-          <div className='min-h-screen bg-slate-50 h-full font-SourceSansPro'>
+          <div className='min-h-screen bg-slate-50 md:h-full font-SourceSansPro pb-20 md:pb-0'>
             <Header />
-            <div className="flex font-Poppins min-h-screen">
-              <div className="w-80 py-8 min-h-screen">
+            <div className="md:flex font-Poppins min-h-screen">
+              <div className="fixed md:relative bottom-0 left-0 md:w-80 w-full py-4 md:py-8 md:min-h-screen z-50">
                 <Sidebar />
               </div>
               <div className="w-full">
-                <div className="py-8 px-8">
+                <div className="py-4 md:py-8 px-4 md:px-8">
                   {children}
                 </div>
               </div>
