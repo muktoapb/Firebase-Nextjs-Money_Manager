@@ -17,7 +17,7 @@ NEXT_PUBLIC_APPID = appId
 
 
 
-###  `Tech ` Stack 
+###  `Tech` Stack 
  - [Next.js](https://nextjs.org/)
  - [Tailwind css](https://tailwindcss.com/)
  - [MomentJS](https://momentjs.com/)
