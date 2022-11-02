@@ -18,7 +18,7 @@ const Expense = ({allgetting}) => {
         <>
 
             <Head>
-                <title>Donate - Money Manager</title>
+                <title>Expense - Money Manager</title>
             </Head>
 
 
