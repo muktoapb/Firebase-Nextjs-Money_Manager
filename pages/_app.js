@@ -12,6 +12,8 @@ import { GetData } from '../utils/getData';
 function MyApp({ Component, pageProps }) {
 
 const allgetting = GetData();
+
+
   return (
     <Layout>
       <ToastContainer position='top-center' autoClose={1500} />

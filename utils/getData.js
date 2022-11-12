@@ -38,6 +38,7 @@ export const GetData = () => {
     const addDB = async (db_Name, stateName) => {
         const collectionRef = collection(db, db_Name);
         const q = query(collectionRef, where("user", "==", user ? user.uid : 0));
+        // console.log('snapshort',q);
         const unsubscribe = onSnapshot(q, (snapshort) => {
             stateName(
                 snapshort.docs.map((doc) => (
@@ -54,6 +55,27 @@ export const GetData = () => {
         addDB('expense', setAllexpense)
         addDB('investment', setAllinvestment)
     }, [user, loading])
+
+
+
+    // sorting 
+    allIncome.sort(function (a, b) {
+        var dateA = new Date(a.date), dateB = new Date(b.date)
+        return dateB - dateA
+    });
+    alldonate.sort(function (a, b) {
+        var dateA = new Date(a.date), dateB = new Date(b.date)
+        return dateB - dateA
+    });
+    allexpense.sort(function (a, b) {
+        var dateA = new Date(a.date), dateB = new Date(b.date)
+        return dateB - dateA
+    });
+    allinvestment.sort(function (a, b) {
+        var dateA = new Date(a.date), dateB = new Date(b.date)
+        return dateB - dateA
+    });
+
     let dbdata = { main: allIncome, donate: alldonate, expense: allexpense, investment: allinvestment }
     return dbdata;
 }
