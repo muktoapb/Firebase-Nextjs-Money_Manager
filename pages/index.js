@@ -54,9 +54,9 @@ export default function Home({ allgetting }) {
     return data;
   });
   // console.log(chartdata);
-  const option = [{ name: 'Donate', color: '#EA500D', type: 'bar' }, { name: 'Investment', color: '#9980FF', type: 'bar' }]
+  const option = [{ name: 'Donate', color: '#ac4ddc', type: 'bar' }, { name: 'Investment', color: '#37a5e9', type: 'bar' }]
 
-  const earnigchart = [{ name: 'Amount', color: '#37A4E8', type: 'bar' }, { name: 'Earning', color: '#E81A1E', type: 'line' }]
+  const earnigchart = [{ name: 'Amount', color: '#60c0c2', type: 'bar' }, { name: 'Earning', color: '#e7191c', type: 'line' }]
 
   return (
     <div>

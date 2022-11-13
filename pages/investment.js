@@ -9,12 +9,15 @@ import Popup from '../components/Money/Popup';
 import AddButton from '../components/utility/AddButton';
 import { Nodata } from '../components/utility/Nodata';
 import { dataFormater } from '../utils/dataFormater';
+import { yearDataFormater } from '../utils/yearDataFrormater';
 
 const Investment = ({allgetting}) => {
     const [ePop, setEPop] = useState(false);
     const allinvestment = allgetting.investment;
     const chartdata = dataFormater(allinvestment);
-    const option = [{ name: 'Amount', color: '#E7191B', type: 'bar' }]
+    const option = [{ name: 'Amount', color: '#37a5e9', type: 'bar' }]
+    const yeardata = yearDataFormater(allinvestment);
+    const optionYear = [{ name: 'Amount', color: '#afdbf6', type: 'bar' }]
     return (
         <>
 
@@ -28,10 +31,13 @@ const Investment = ({allgetting}) => {
             <Popup status={ePop} setStatus={setEPop} title="Add Investment">
                 <AddDonate setStatus={setEPop} title="Investment" dbName='investment' />
             </Popup>
-            <div className="grid gap-5">
-                <Chart data={chartdata} option={option} legend={false} labeltop={true} xname ={'Month'}/>
+            <div className="grid gap-4 md:grid-cols-2">
+            <div className="md:col-span-2"><Chart data={chartdata} option={option} legend={false} labeltop={true} xname ={'Month'}/></div>
                 <MonthlyList money={chartdata} title='Monthly Log'/>
-                <MoneyList money={allinvestment} title='Investment Log' db_name='investment' />
+                <Chart data={yeardata} option={optionYear} legend={false} labeltop={true} xname ={'Year'}/>
+                <div className="md:col-span-2">
+                    <MoneyList money={allinvestment} title='Investment Log' db_name='investment' />
+                </div>
             </div>
             <div onClick={() => setEPop(true)}>
                 <AddButton>+</AddButton>
