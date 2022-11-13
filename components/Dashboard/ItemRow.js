@@ -1,23 +1,9 @@
-import { deleteDoc, doc } from 'firebase/firestore';
 import { BiCalendarEvent, BiDonateHeart } from 'react-icons/bi';
 import { IoBriefcaseOutline } from 'react-icons/io5';
 import { MdPayment } from 'react-icons/md';
-import { toast } from 'react-toastify';
-import { db } from '../../utils/firebase';
 import { numberFormater } from '../../utils/numberFormater';
 
-export default function ItemRow({itemid,date, expense,donate,invest ,text, db_name}) {
-// console.log(db_name);
-  const deleteitem = async (id)=>{
-      const docRef = doc(db, db_name, id);
-      
-      if (confirm('Are you sure?')) {
-        await deleteDoc(docRef);
-        toast.success("Item deleted !")
-      }else{
-        toast.error("Delete Cancled !")
-      }
-  }
+export default function ItemRow({date, expense,donate,invest}) {
 
 
   return (

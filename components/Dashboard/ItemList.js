@@ -13,7 +13,7 @@ export default function ItemList({ money, title, db_name }) {
     return (
         moneyList.length > 0 && (
             <div className='border-dashed border-2 py-3 px-3 rounded-lg'>
-                <h3 className='font-semibold text-lg'>{title}</h3>
+                <h3 className='font-semibold'>{title}</h3>
                 <div className="mt-2">
                     {
                         moneyList.map((data, id) => {

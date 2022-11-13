@@ -5,6 +5,7 @@ import Breadcam from '../components/Breadcam'
 import Chart from '../components/Chart/Chart'
 import AddEarning from '../components/Money/AddEarning'
 import MoneyList from '../components/Money/MoneyList'
+import MonthlyList from '../components/Money/MonthlyList'
 import Popup from '../components/Money/Popup'
 import AddButton from '../components/utility/AddButton'
 import { Nodata } from '../components/utility/Nodata'
@@ -48,8 +49,8 @@ export default function Income({allgetting}) {
       </Popup>
       <div className="grid gap-5">
         <Chart data={chartdata} option={option} legend={false} labeltop={true}/>
+        <MonthlyList money={chartdata} title='Monthly Log'/>
         <MoneyList money={allIncome} title='Earning Log' db_name='money' earning={true}/>
-        {/* <MoneyList money={allIncome} title='Income Log' db_name='money'/> */}
       </div>
       <div onClick={() => setEPop(true)}>
         <AddButton>+</AddButton>

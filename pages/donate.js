@@ -4,6 +4,7 @@ import Breadcam from '../components/Breadcam';
 import Chart from '../components/Chart/Chart';
 import AddDonate from '../components/Money/AddData';
 import MoneyList from '../components/Money/MoneyList';
+import MonthlyList from '../components/Money/MonthlyList';
 import Popup from '../components/Money/Popup';
 import AddButton from '../components/utility/AddButton';
 import { Nodata } from '../components/utility/Nodata';
@@ -29,6 +30,7 @@ const Donate = ({allgetting}) => {
             </Popup>
             <div className="grid gap-4">
                 <Chart data={chartdata} option={option} legend={false} labeltop={true}/>
+                <MonthlyList money={chartdata} title='Monthly Log'/>
                 <MoneyList money={alldonate} title='Donate Log' db_name='donate' />
             </div>
             <div onClick={() => setEPop(true)}>
