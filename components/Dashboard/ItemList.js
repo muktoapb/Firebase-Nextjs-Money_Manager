@@ -2,10 +2,8 @@ import React from 'react';
 import { numberFormater } from '../../utils/numberFormater';
 import ItemRow from './ItemRow';
 
-export default function ItemList({ money, title, db_name }) {
+export default function ItemList({ money, title }) {
     const moneyList = money;
-    // console.log('moeny', moneyList);
-    // console.log(moneyList);
     let totalexpense = 0;
     let totaldonate = 0;
     let totalinvest = 0;

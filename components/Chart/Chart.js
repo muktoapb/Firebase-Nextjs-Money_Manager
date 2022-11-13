@@ -2,7 +2,7 @@ import React from 'react';
 import { Bar, CartesianGrid, ComposedChart, LabelList, Legend, Line, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { numberFormater } from '../../utils/numberFormater';
 
-export default function Chart({ data, legend, option,labeltop }) {
+export default function Chart({ data, legend, option,labeltop, xname }) {
 
   // console.log(option);
   return (
@@ -16,7 +16,7 @@ export default function Chart({ data, legend, option,labeltop }) {
           height={400}
         >
           <CartesianGrid stroke="#f5f5f5" />
-          <XAxis dataKey="Month" allowDataOverflow='true' tick={{ fontSize: 13 }} />
+          <XAxis dataKey={xname} allowDataOverflow='true' tick={{ fontSize: 13 }} />
           <YAxis tick={{ fontSize: 12 }} />
           <Tooltip formatter={(value) => numberFormater(value)} />
 

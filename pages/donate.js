@@ -9,12 +9,17 @@ import Popup from '../components/Money/Popup';
 import AddButton from '../components/utility/AddButton';
 import { Nodata } from '../components/utility/Nodata';
 import { dataFormater } from '../utils/dataFormater';
+import { yearDataFormater } from '../utils/yearDataFrormater';
 
 const Donate = ({allgetting}) => {
     const [ePop, setEPop] = useState(false);
     const alldonate = allgetting.donate
     const chartdata = dataFormater(alldonate);
+    const yeardata = yearDataFormater(alldonate);
+    console.log(chartdata);
+    console.log(yeardata);
     const option = [{ name: 'Amount', color: '#E9500E', type: 'bar' }]
+    const optionYear = [{ name: 'Amount', color: '#e76e3a', type: 'bar' }]
     return (
         <>
 
@@ -29,7 +34,8 @@ const Donate = ({allgetting}) => {
                 <AddDonate setStatus={setEPop} title="Donation" dbName='donate' />
             </Popup>
             <div className="grid gap-4">
-                <Chart data={chartdata} option={option} legend={false} labeltop={true}/>
+                <Chart data={chartdata} option={option} legend={false} labeltop={true} xname ={'Month'}/>
+                <Chart data={yeardata} option={optionYear} legend={false} labeltop={true} xname ={'Year'}/>
                 <MonthlyList money={chartdata} title='Monthly Log'/>
                 <MoneyList money={alldonate} title='Donate Log' db_name='donate' />
             </div>

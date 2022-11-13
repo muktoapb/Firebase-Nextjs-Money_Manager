@@ -29,7 +29,7 @@ const Investment = ({allgetting}) => {
                 <AddDonate setStatus={setEPop} title="Investment" dbName='investment' />
             </Popup>
             <div className="grid gap-5">
-                <Chart data={chartdata} option={option} legend={false} labeltop={true} />
+                <Chart data={chartdata} option={option} legend={false} labeltop={true} xname ={'Month'}/>
                 <MonthlyList money={chartdata} title='Monthly Log'/>
                 <MoneyList money={allinvestment} title='Investment Log' db_name='investment' />
             </div>

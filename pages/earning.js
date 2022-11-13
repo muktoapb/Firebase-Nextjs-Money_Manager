@@ -48,7 +48,7 @@ export default function Income({allgetting}) {
         <AddEarning setStatus={setEPop}/>
       </Popup>
       <div className="grid gap-5">
-        <Chart data={chartdata} option={option} legend={false} labeltop={true}/>
+        <Chart data={chartdata} option={option} legend={false} labeltop={true} xname ={'Month'}/>
         <MonthlyList money={chartdata} title='Monthly Log'/>
         <MoneyList money={allIncome} title='Earning Log' db_name='money' earning={true}/>
       </div>
