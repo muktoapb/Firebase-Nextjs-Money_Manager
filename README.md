@@ -1,6 +1,6 @@
 
 # Firebase & Next.js Money Manager
-
+![Logo](assets/img/logo.png)
 Personal Money Manager app With Next.js and Firebase.
 
 
