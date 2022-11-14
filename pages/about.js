@@ -31,7 +31,7 @@ export default function About() {
                         <p>The app is built for a special purpose. Money Management is very important in our life to avoid bad times. As a Muslim, I believe Allah (God) gives us everything. We don&apos;t earn anything from ourselves. Every business partner is important. Business profit or loss also depends on your business partner. In my case, I keep Allah as my business partner. I give him a 2.5% partnership. That means 2.5% of my earnings I give to charity or poor people who badly need money. If you are from another religion you can think of it as just donating. This App is designed for All of the people who want to donate a % of their income.</p>
                         <br />
                         <p>There is another part of the APP is Investment. Investment is very important for growing up. I keep 5% of my earnings for Investment. This App will automatically keep 5% money for investment and you can spend it for new business or your existing business growth.</p>
-                        <p><a className="bg-slate-800 hover:bg-slate-500 mt-4 inline-block px-4 py-1 rounded-r-full text-white" href="https://github.com/muktoapb/firebase-nextjs-money-manager" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
+                        <p><a className="bg-slate-800 hover:bg-slate-500 mt-4 inline-block px-4 py-1 rounded-r-full text-white" href="https://github.com/muktoapb/Firebase-Nextjs-Money_Manager" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
                     </div>
                 </div>
 

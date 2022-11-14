@@ -22,7 +22,7 @@ export default function Header() {
             <button className='w-full flex justify-center items-center font-semibold' onClick={() => auth.signOut()}><MdLogout /> <span className='ml-2'>Sign Out</span></button>
           </div>
           <div className="ml-2 text-[30px] md:mr-4">
-            <a href="https://github.com/muktoapb/firebase-nextjs-money-manager" target="_blank" rel="noopener noreferrer"><IoLogoGithub /></a>
+            <a href="https://github.com/muktoapb/Firebase-Nextjs-Money_Manager" target="_blank" rel="noopener noreferrer"><IoLogoGithub /></a>
           </div>
         </div>
       </div>
