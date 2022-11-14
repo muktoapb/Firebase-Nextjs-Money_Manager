@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { numberFormater } from '../../utils/numberFormater';
 import MoneyItem from './MoneyItem';
 import Pagination from './Pagination';
-let PageSize = 5;
+let PageSize = 10;
 
 export default function MoneyList({ money, title, db_name, earning }) {
     const moneyList = money;
@@ -37,15 +37,16 @@ export default function MoneyList({ money, title, db_name, earning }) {
                         })
                     }
                 </div>
+                
+                
+                <div className="mt-3 border-t-2 border-dashed pt-2 tracking-wider md:flex justify-between items-center">
                 <Pagination
                         currentPage={currentPage}
                         totalCount={moneyList.length}
                         pageSize={PageSize}
                         onPageChange={page => setCurrentPage(page)}
                     />
-                
-                <div className="mt-3 border-t-2 border-dashed pt-2 tracking-wider">
-                    <p>Total : {numberFormater(totalMoney)}</p>
+                    <p className='mt-2 md:mt-0'>Total : {numberFormater(totalMoney)}</p>
                 </div>
 
 

@@ -36,37 +36,36 @@ const Pagination = props => {
 
     let lastPage = paginationRange[paginationRange.length - 1];
     return (
-        <div className="mt-3 border-t-2 border-dashed pt-2 tracking-wider">
 
 
-            <ul className="flex items-center gap-1">
-                <li
-                    className={`bg-slate-200 w-6 h-6 text-sm leading-6 rounded-full text-center flex justify-center items-center ${currentPage === 1 ? 'opacity-25 cursor-not-allowed' : 'cursor-pointer'}`}
-                    onClick={onPrevious}
-                >
-                    <BsChevronLeft />
-                </li>
-                {paginationRange.map((pageNumber, index) => {
-                    if (pageNumber === DOTS) {
-                        return <li className="bg-slate-200 w-6 h-6 text-sm leading-4 rounded-full text-center" key={index}>...</li>;
-                    }
-                    return (
-                        <li key={index}
-                            className={`w-6 h-6 text-sm leading-6 rounded-full text-center ${pageNumber === currentPage ? 'bg-blue-400 text-white ' : 'bg-slate-200 cursor-pointer'}`}
-                            onClick={() => onPageChange(pageNumber)}
-                        >
-                            {pageNumber}
-                        </li>
-                    );
-                })}
-                <li
-                    className={`bg-slate-200 w-6 h-6 text-sm leading-6 rounded-full text-center flex justify-center items-center ${currentPage === lastPage ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
-                    onClick={onNext}
-                >
-                    <BsChevronRight />
-                </li>
-            </ul>
-        </div>
+
+        <ul className="flex items-center gap-1">
+            <li
+                className={`bg-slate-200 w-6 h-6 text-sm leading-6 rounded-full text-center flex justify-center items-center ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                onClick={onPrevious}
+            >
+                <BsChevronLeft />
+            </li>
+            {paginationRange.map((pageNumber, index) => {
+                if (pageNumber === DOTS) {
+                    return <li className="bg-slate-200 w-6 h-6 text-sm leading-4 rounded-full text-center" key={index}>...</li>;
+                }
+                return (
+                    <li key={index}
+                        className={`w-6 h-6 text-sm leading-6 rounded-full text-center ${pageNumber === currentPage ? 'bg-blue-400 text-white ' : 'bg-slate-200 cursor-pointer'}`}
+                        onClick={() => onPageChange(pageNumber)}
+                    >
+                        {pageNumber}
+                    </li>
+                );
+            })}
+            <li
+                className={`bg-slate-200 w-6 h-6 text-sm leading-6 rounded-full text-center flex justify-center items-center ${currentPage === lastPage ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                onClick={onNext}
+            >
+                <BsChevronRight />
+            </li>
+        </ul>
     );
 };
 

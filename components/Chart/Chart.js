@@ -7,7 +7,7 @@ export default function Chart({ data, legend, option,labeltop, xname }) {
   // console.log(option);
   return (
     data.length>0 &&
-    <div className='border-dashed border-2 py-2 px-2 pl-0 md:py-4 md:px-4 rounded-lg min-h-[400px] h-full'>
+    <div className='border-dashed border-2 py-2 px-2 pl-0 md:py-4 md:px-4 rounded-lg min-h-[350px] h-full'>
 
       <ResponsiveContainer width="99%">
         <ComposedChart
