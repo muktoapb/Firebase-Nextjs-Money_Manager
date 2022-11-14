@@ -53,7 +53,7 @@ export default function Income({allgetting}) {
     const data = { Year: key, Amount: yearlycome[key] }
     return data;
   });
-  console.log(yearchartdata);
+  
   const option = [{ name: 'Amount', color: '#60c0c2', type: 'bar' }]
   const optionYear = [{ name: 'Amount', color: '#a0d9da', type: 'bar' }]
   return (
