@@ -15,7 +15,12 @@ export default function MoneyList({ money, title, db_name, earning }) {
     }, [currentPage, moneyList]);
 
     let totalMoney = moneyList.reduce(function (prev, cur) {
-        return prev + cur.amount;
+        if (earning) {
+            return prev + cur.expense;
+        } else {
+            return prev + cur.amount;
+        }
+        
     }, 0);
     
     return (
@@ -26,13 +31,11 @@ export default function MoneyList({ money, title, db_name, earning }) {
                     {
                         currentTableData.map((data) => {
                             let amount = 0;
-                            // console.log(data);
                             if (earning) {
                                 amount = data.expense
                             } else {
                                 amount = data.amount
                             }
-
                             return <MoneyItem date={data.date} amount={amount} text={data.comment} itemid={data.id} key={data.id} db_name={db_name} ></MoneyItem>;
                         })
                     }
