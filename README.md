@@ -19,7 +19,6 @@ NEXT_PUBLIC_APPID = appId
 ###  `App` Screenshots
 
 ![Dashboard](assets/img/Screenshort.jpg)
-[ ![](assets/img/screenshot-1.png) ](assets/img/screenshot-2.png)
 
 ###  `Tech` Stack 
  - [Next.js](https://nextjs.org/)

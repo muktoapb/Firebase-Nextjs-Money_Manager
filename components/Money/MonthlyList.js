@@ -36,7 +36,7 @@ export default function MonthlyList({ money, title }) {
                         pageSize={PageSize}
                         onPageChange={page => setCurrentPage(page)}
                     />
-                    <p><span className='mt-2 md:mt-0'>List Total : {numberFormater(totalAmount.toFixed(2))}</span> </p>
+                    <p className='mt-2 md:mt-0'>List Total : {numberFormater(totalAmount.toFixed(2))} </p>
                 </div>
             </div>
         )
