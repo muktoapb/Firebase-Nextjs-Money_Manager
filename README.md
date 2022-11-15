@@ -17,13 +17,9 @@ NEXT_PUBLIC_APPID = appId
 ```
 
 ###  `App` Screenshots
-\
-Dashboard chart and summery.
-![Dashboard](assets/img/screenshot-1.png)
- Individual pages with yearly chart.
-![Earnings](assets/img/screenshot-2.png)
-Popup for adding new entry.
-![Add Investment](assets/img/screenshot-3.png)
+
+![Dashboard](assets/img/Screenshort.jpg)
+[ ![](assets/img/screenshot-1.png) ](assets/img/screenshot-2.png)
 
 ###  `Tech` Stack 
  - [Next.js](https://nextjs.org/)
